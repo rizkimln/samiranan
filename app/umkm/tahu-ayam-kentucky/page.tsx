@@ -9,7 +9,7 @@ import { ArrowLeft, MapPin, Phone, Mail, Calendar, Star, Users, Award } from 'lu
 import Link from 'next/link';
 import { useEffect } from 'react';
 
-export default function KerajinanBambuDetail() {
+export default function TahudanAyam() {
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
@@ -77,7 +77,7 @@ export default function KerajinanBambuDetail() {
             <div className="lg:col-span-2 space-y-6 sm:space-y-8">
               <Card className="shadow-lg border-0">
                 <CardContent className="p-4 sm:p-6 md:p-8">
-                  <h2 className="text-xl sm:text-2xl md:text-3xl font-bold text-gray-900 mb-4 sm:mb-5 md:mb-6">Tentang Kerajinan Bambu Pak Joko</h2>
+                  <h2 className="text-xl sm:text-2xl md:text-3xl font-bold text-gray-900 mb-4 sm:mb-5 md:mb-6">Tentang Tahu & Ayam Kentucky '45 (PatMo)</h2>
                   <p className="text-sm sm:text-base text-gray-600 leading-relaxed mb-4 sm:mb-5 md:mb-6">
                     Usaha kuliner rumahan yang berdiri sejak 2005 di Samiranan, Nomporejo, Galur, Kulon Progo. Dikelola oleh Wawan Setiawan bersama istrinya Fitri Khoirina. Menu andalan berfokus pada olahan tahu dan ayam kentucky dengan
                     rasa rumahan, harga terjangkau, serta menjaga kebersihan dan kualitas bahan. Melayani warga sekitar dan pesanan acara kecil-kecilan.

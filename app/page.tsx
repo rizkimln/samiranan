@@ -10,6 +10,31 @@ import { useState } from 'react';
 export default function VillageHomepage() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
+  // Function untuk membuka aplikasi peta sesuai perangkat
+  const openUniversalMaps = () => {
+    const latitude = -7.9619782;
+    const longitude = 110.2062359;
+    const locationName = 'Padukuhan Samiranan';
+
+    // Deteksi perangkat
+    const isIOS = /iPad|iPhone|iPod/.test(navigator.userAgent);
+    const isAndroid = /Android/.test(navigator.userAgent);
+
+    if (isIOS) {
+      // Untuk iOS - buka Apple Maps dengan fallback ke Google Maps
+      const appleMapsUrl = `https://maps.apple.com/?q=${locationName}&ll=${latitude},${longitude}`;
+      window.open(appleMapsUrl, '_blank');
+    } else if (isAndroid) {
+      // Untuk Android - buka Google Maps (biasanya sudah terinstall)
+      const googleMapsUrl = `https://maps.google.com/?q=${latitude},${longitude}`;
+      window.open(googleMapsUrl, '_blank');
+    } else {
+      // Untuk desktop - buka Google Maps
+      const googleMapsUrl = `https://maps.google.com/?q=${latitude},${longitude}&z=15`;
+      window.open(googleMapsUrl, '_blank');
+    }
+  };
+
   const scrollToSection = (sectionId: string) => {
     const element = document.getElementById(sectionId);
     if (element) {
@@ -215,10 +240,10 @@ export default function VillageHomepage() {
           <Button
             size="lg"
             className="bg-yellow-500 hover:bg-yellow-600 text-black font-semibold px-3 py-2 sm:px-6 sm:py-3 lg:px-8 lg:py-4 text-xs sm:text-base lg:text-lg rounded-lg cursor-pointer touch-manipulation"
-            onClick={() => scrollToSection('tentang')}
+            onClick={openUniversalMaps}
           >
             Jelajahi Padukuhan Kami
-            <ChevronRight className="w-3 h-3 sm:w-4 sm:h-4 lg:w-5 lg:h-5 ml-2" />
+            <MapPin className="w-3 h-3 sm:w-4 sm:h-4 lg:w-5 lg:h-5 ml-2" />
           </Button>
         </div>
       </section>
@@ -592,8 +617,12 @@ export default function VillageHomepage() {
               <h3 className="text-lg sm:text-xl font-semibold mb-3 sm:mb-4">Tim Padukuhan</h3>
               <ul className="space-y-1 sm:space-y-2">
                 <li className="text-gray-300 text-sm sm:text-base">Kepala Padukuhan: Ibu Eka Yuli Astuti </li>
-                <li className="text-gray-300 text-sm sm:text-base">Ketua RW 15 : Bpk. Suparjo</li>
+                <li className="text-gray-300 text-sm sm:text-base">Ketua RW 15: Bpk. Suparjo</li>
                 <li className="text-gray-300 text-sm sm:text-base">Ketua RW 16: Bpk. Pujo Prayitno </li>
+                <li className="text-gray-300 text-sm sm:text-base">Ketua RT 27: Bpk. Sugiarta</li>
+                <li className="text-gray-300 text-sm sm:text-base">Ketua RT 28: Bpk. Ndari Sugianto </li>
+                <li className="text-gray-300 text-sm sm:text-base">Ketua RT 29: Bpk. Fathurrohman</li>
+                <li className="text-gray-300 text-sm sm:text-base">Ketua RT 30: Bpk. Ali Sukamto </li>
               </ul>
             </div>
 

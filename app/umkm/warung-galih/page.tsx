@@ -9,7 +9,7 @@ import { ArrowLeft, MapPin, Phone, Mail, Calendar, Star, Users, Fish, Clock } fr
 import Link from 'next/link';
 import { useEffect } from 'react';
 
-export default function TernakLeleDetail() {
+export default function WarungGalih() {
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);

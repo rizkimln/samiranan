@@ -9,7 +9,7 @@ import { ArrowLeft, MapPin, Phone, Mail, Clock, Calendar, Star, Users } from 'lu
 import Link from 'next/link';
 import { useEffect } from 'react';
 
-export default function WarungBuSariDetail() {
+export default function BandengPresto() {
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
